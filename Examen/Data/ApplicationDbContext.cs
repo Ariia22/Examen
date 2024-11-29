@@ -1,14 +1,15 @@
-﻿using Microsoft.EntityFrameworkCore;
-using ManejoPresupuesto.Models;
-using Examen.Data;
-using System.Collections.Generic;
+﻿using Examen.Models;
+using Microsoft.EntityFrameworkCore;
 
-namespace ManejoPresupuesto.Data
+public class ApplicationDbContext : DbContext
 {
-    public class ApplicationDbContext : DbContext
-    {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
+    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
 
-        public DbSet<Venta> Ventas { get; set; }
+    public DbSet<VentaConMenorMonto> Ventas { get; set; } 
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
+        
     }
 }
