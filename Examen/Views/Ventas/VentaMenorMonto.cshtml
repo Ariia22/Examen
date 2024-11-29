@@ -1,0 +1,24 @@
+﻿@model List<VentaConMenorMonto>
+
+<h2>Venta con Menor Monto</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre Completo</th>
+            <th>Número de Productos</th>
+            <th>Monto Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var venta in Model)
+        {
+            <tr>
+                <td>@venta.NombreCompleto</td>
+                <td>@venta.NumeroDeProductos</td>
+                <td>@venta.MontoTotal</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
